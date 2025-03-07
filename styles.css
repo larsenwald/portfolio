@@ -244,7 +244,7 @@ nav {
   border: 5px solid var(--accent-color);
 }
 
-.profile-img {
+.profile-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
