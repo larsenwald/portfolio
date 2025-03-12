@@ -211,7 +211,7 @@ nav {
   content: "";
   position: absolute;
   width: 100%;
-  height: 10px;
+  height: 8px;
   background-color: var(--highlight-color);
   bottom: 8px;
   left: 0;
@@ -396,7 +396,7 @@ nav {
   z-index: 1;
 }
 
-.section-header::after {
+/* .section-header::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -406,7 +406,7 @@ nav {
   left: 0;
   z-index: 0;
   border-radius: 10px;
-}
+} */
 
 .projects-grid {
   display: grid;
@@ -638,9 +638,6 @@ footer {
   border-right: 3px solid var(--accent-color);
   white-space: nowrap;
   margin: 0 auto;
-  /* Remove or reduce this if you don't need extra space per character */
-  /* letter-spacing: 0; */
-
   /* Ensure we only animate to the total character width. */
   /* "Just a sec..." is 13 characters total, so set width: 13ch. */
   width: 13ch;
@@ -762,6 +759,11 @@ body.dark-mode .dark-mode-toggle i {
     font-size: 2.8rem;
   }
 
+  .hero h1 span::after {
+    bottom: 5px;
+    height: 7px;
+  }
+
   .social-links {
     justify-content: center;
   }
@@ -769,29 +771,30 @@ body.dark-mode .dark-mode-toggle i {
   .about-content {
     flex-direction: column;
   }
-
-  .contact-container {
-    flex-direction: column;
-  }
 }
 
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
     flex-direction: column;
     position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
+    top: 40px;
+    right: 0;
+    width: 50%;
     background-color: var(--paper-color);
     padding: 20px;
     border-radius: 10px;
     box-shadow: var(--retro-shadow);
     z-index: 100;
+    transition: all 0.2s;
   }
 
   .nav-links.active {
-    display: flex;
+    top: 80px;
+    visibility: visible;
+    opacity: 1;
   }
 
   .menu-toggle {
@@ -829,6 +832,29 @@ body.dark-mode .dark-mode-toggle i {
 
   .hero h1 {
     font-size: 2.2rem;
+  }
+
+  .hero h1 span::after {
+    bottom: 4px;
+    height: 6px;
+  }
+
+  .element-1 {
+    top: 50px;
+    right: -20px;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .element-2 {
+    bottom: 0px;
+    left: -20px;
+    animation: float 7s ease-in-out infinite;
+  }
+
+  .element-3 {
+    top: -20px;
+    left: 20%;
+    animation: float 5s ease-in-out infinite;
   }
 
   .footer-links {
